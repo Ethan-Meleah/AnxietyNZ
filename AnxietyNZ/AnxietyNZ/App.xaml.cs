@@ -15,7 +15,7 @@ namespace AnxietyNZ
 
             DB_PATH = db_path;
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
