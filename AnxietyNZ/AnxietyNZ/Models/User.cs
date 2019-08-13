@@ -1,11 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SQLite;
 
 namespace AnxietyNZ.Models
 {
-    public class User
+    class User
     {
         public int Id { get; set; }
         public string Username { get; set; }
@@ -22,7 +21,7 @@ namespace AnxietyNZ.Models
         {
             if (!this.Username.Equals("") && !this.Password.Equals(""))
                 return true;
-            else 
+            else
                 return false;
         }
     }
