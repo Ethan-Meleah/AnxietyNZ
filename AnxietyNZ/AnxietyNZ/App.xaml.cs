@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AnxietyNZ.Views;
+using Xamarin.Forms;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AnxietyNZ
@@ -9,6 +10,9 @@ namespace AnxietyNZ
     public partial class App : Application
     {
         public static string DB_PATH = string.Empty;
+
+        static TokenDatabaseController tokenDatabase;
+        static UserDatabaseController userDatabase;
 
         public App(string db_path)
         {
@@ -32,6 +36,30 @@ namespace AnxietyNZ
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public static UserDatabaseController UserDatabase()
+        {
+            get
+            {
+                if(userDatabase == null)
+                {
+                    userDatabase = new UserDatabaseController();
+                }
+                return userDatabase;
+            }
+        }
+
+        public static TokenDatabaseController TokenDatabase()
+        {
+            get
+            {
+                if(tokenDatabase == null)
+                {
+                    tokenDatabase = new TokenDatabaseController();
+                }
+                return tokenDatabase;
+            }
         }
     }
 }

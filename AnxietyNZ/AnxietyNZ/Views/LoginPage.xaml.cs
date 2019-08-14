@@ -38,6 +38,7 @@ namespace AnxietyNZ.Views
             if (user.CheckInformation())
             {
                 DisplayAlert("Login", "Login Success", "Ok");
+                App.UserDatabase.SaveUser(user);
             }
             else
             {
