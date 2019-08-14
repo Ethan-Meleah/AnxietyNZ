@@ -16,6 +16,19 @@ namespace AnxietyNZ.Views
         public LoginPage()
         {
             InitializeComponent();
+            Init();
+        }
+
+        void Init()
+        {
+            BackgroundColor = Constants.BackgroundColor1;
+            Lbl_Password.TextColor = Constants.MainTextColor;
+            Lbl_Username.TextColor = Constants.MainTextColor;
+            ActivitySpinner.IsVisible = false;
+            //LoginIcon.HeightRequest = Constants.LoginIconHeight;
+
+            Entry_Username.Completed += (s,e) => Entry_Password.Focus();
+            Entry_Password.Completed += (s,e) => SignInProcedure(s,e);
         }
 
         void SignInProcedure(object sender, EventArgs e)

@@ -2,13 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnxietyNZ.Views.LoginPage">
-    <ContentPage.Content>
-        <StackLayout>
+    <StackLayout x:Name="MasterLayout">
+        
+        <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+            <Label x:Name="Title" Text="ANXIETYNZ" Margin="0,90,0,0" TextColor="White" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="SubTitle" Text="Login" Margin="0,10,0,0" TextColor="White" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+            <!--<Image x:Name="LoginIcon"  Margin="0,90,0,0" />-->
+        </StackLayout>
+    
+        <StackLayout x:Name="LoginEntriesStack" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArgruments="Thickness">
+                    <OnIdiom.Phone>40,0,40,0</OnIdiom.Phone>
+                </OnIdiom>
+            </StackLayout.Padding>
+            
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="True" />
+            
             <Label x:Name="Lbl_Username" Text="Username" />
             <Entry x:Name="Entry_Username" Placeholder="Username" />
             <Label x:Name="Lbl_Password" Text="Pasword" />
             <Entry x:Name="Entry_Password" Placeholder="Password" />
             <Button x:Name="Btn_Signin" Text="Sign In" Clicked="SignInProcedure" />
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
+    
 </ContentPage>
