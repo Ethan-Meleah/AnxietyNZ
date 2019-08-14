@@ -3,12 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnxietyNZ.Views.LoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="Lbl_Username" Text="Username" />
-            <Entry x:Name="Entry_Username" Placeholder="Username" />
-            <Label x:Name="Lbl_Password" Text="Pasword" />
-            <Entry x:Name="Entry_Password" Placeholder="Password" />
-            <Button x:Name="Btn_Signin" Text="Sign In" Clicked="SignInProcedure" />
+        <StackLayout x:Name="MasterLayout">
+
+            <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+                <Image x:Name="LoginIcon" Source="LoginIcon.png" Margin="0,80,0,0" />
+            </StackLayout>
+
+            <StackLayout x:Name="LoginEntriesStack" VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom s:TypeArguments="Thickness">
+                        <OnIdiom.Phone>
+                            40, 0, 40, 0
+                        </OnIdiom>
+                    </OnIdiom>
+                </StackLayout>
+
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
+
+                <Label x:Name="Lbl_Username" Text="Username" />
+                <Entry x:Name="Entry_Username" Placeholder="Username" />
+                <Label x:Name="Lbl_Password" Text="Pasword" />
+                <Entry x:Name="Entry_Password" Placeholder="Password" />
+                <Button x:Name="Btn_Signin" Text="Sign In" Clicked="SignInProcedure" />
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
