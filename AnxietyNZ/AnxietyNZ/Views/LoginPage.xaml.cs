@@ -38,7 +38,10 @@ namespace AnxietyNZ.Views
             if (user.CheckInformation())
             {
                 DisplayAlert("Login", "Login Success", "Ok");
-                App.UserDatabase.SaveUser(user);
+                var result = await App.RestService.Login(user);
+                if(result.access_token != null) {
+                    App.UserDatabase.SaveUser(user);
+                }
             }
             else
             {
