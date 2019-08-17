@@ -9,10 +9,15 @@ namespace AnxietyNZ.Models
     {
         public static bool IsDev = true;
 
-        public static Color BackgroundColor1 = Color.FromRgb(204, 179, 255);
-        public static Color BackgroundColor2 = Color.White;
-        public static Color MainTextColor = Color.FromRgb(255, 255, 255);
+        public static Color BackgroundColor = Color.FromRgb(179, 204, 255);
+        public static Color MainTextColor = Color.White;
 
-        //public static int LoginIconHeight = 120;
+        public static int LoginIconHeight = 120;
+    
+
+        //-------Login-------
+        public static string LoginUrl = "https://test.com/api/Auth/Login";
+        
+    
     }
 }

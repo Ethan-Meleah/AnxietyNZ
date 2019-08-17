@@ -21,14 +21,15 @@ namespace AnxietyNZ.Views
 
         void Init()
         {
-            BackgroundColor = Constants.BackgroundColor1;
-            Lbl_Password.TextColor = Constants.MainTextColor;
+            BackgroundColor = Constants.BackgroundColor;
             Lbl_Username.TextColor = Constants.MainTextColor;
-            ActivitySpinner.IsVisible = false;
-            //LoginIcon.HeightRequest = Constants.LoginIconHeight;
+            Lbl_Password.TextColor = Constants.MainTextColor;
 
-            Entry_Username.Completed += (s,e) => Entry_Password.Focus();
-            Entry_Password.Completed += (s,e) => SignInProcedure(s,e);
+            ActivitySpinner.IsVisable = false;
+            LoginIcon.HeightRequest = Constants.LoginIconHeight;
+
+            Entry_Username.Completed += (s, e) => Entry_Password.Focus();
+            Entry_Password.Completed += (s, e) => SignInProcedure(s, e);
         }
 
         void SignInProcedure(object sender, EventArgs e)
@@ -36,11 +37,15 @@ namespace AnxietyNZ.Views
             User user = new User(Entry_Username.Text, Entry_Password.Text);
             if (user.CheckInformation())
             {
-                DisplayAlert("Login", "Login Success", "Oke");
+                DisplayAlert("Login", "Login Success", "Ok");
+                var result = await App.RestService.Login(user);
+                if(result.access_token != null) {
+                    App.UserDatabase.SaveUser(user);
+                }
             }
             else
             {
-                DisplayAlert("Login", "Login incorrect, empty username or password", "Oke");
+                DisplayAlert("Login", "Login incorrect, empty username or password", "Ok");
             }
         }
     }
