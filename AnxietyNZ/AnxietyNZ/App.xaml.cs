@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AnxietyNZ.Views;
-using Xamarin.Forms;
+using AnxietyNZ.Data;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AnxietyNZ
@@ -39,7 +39,8 @@ namespace AnxietyNZ
             // Handle when your app resumes
         }
 
-        public static UserDatabaseController UserDatabase()
+
+        public static UserDatabaseController UserDatabase
         {
             get
             {
@@ -51,7 +52,7 @@ namespace AnxietyNZ
             }
         }
 
-        public static TokenDatabaseController TokenDatabase()
+        public static TokenDatabaseController TokenDatabase
         {
             get
             {
@@ -65,7 +66,7 @@ namespace AnxietyNZ
 
         public static RestService RestService
         {
-            get 
+            get
             {
                 if(restService == null)
                 {

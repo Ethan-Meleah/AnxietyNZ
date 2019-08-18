@@ -1,11 +1,12 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AnxietyNZ.Models
 {
-    class User
+    public class User
     {
         [PrimaryKey]
         public int Id { get; set; }

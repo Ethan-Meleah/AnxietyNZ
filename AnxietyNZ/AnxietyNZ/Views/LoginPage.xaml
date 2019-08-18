@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnxietyNZ.Views.LoginPage">
-    <ContentPage.Content>
+
         <StackLayout x:Name="MasterLayout">
 
             <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
@@ -11,12 +11,12 @@
 
             <StackLayout x:Name="LoginEntriesStack" VerticalOptions="StartAndExpand">
                 <StackLayout.Padding>
-                    <OnIdiom s:TypeArguments="Thickness">
+                    <OnIdiom x:TypeArguments="Thickness">
                         <OnIdiom.Phone>
                             40, 0, 40, 0
-                        </OnIdiom>
+                        </OnIdiom.Phone>
                     </OnIdiom>
-                </StackLayout>
+                </StackLayout.Padding>
 
                 <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
 
@@ -27,7 +27,7 @@
                 <Button x:Name="Btn_Signin" Text="Sign In" Clicked="SignInProcedure" />
             </StackLayout>
 
-        </StackLayout>
+        
     </StackLayout>
     
 </ContentPage>

@@ -1,5 +1,6 @@
+﻿using SQLite;
 using System;
-using System.Collection.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -25,8 +26,8 @@ namespace AnxietyNZ.Droid.Data
         {
             var sqliteFileName = "TestDB.db3";
             string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            var path = path.Combine(documentsPath, sqliteFileName);
-            var conn = new SQLite_Android.SQLiteConnection(path);
+            var path = Path.Combine(documentsPath, sqliteFileName);
+            var conn = new SQLite.SQLiteConnection(path);
 
             return conn;
         }
