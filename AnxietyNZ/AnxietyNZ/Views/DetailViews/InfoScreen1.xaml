@@ -4,14 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AnxietyNZ.Views.Menu.Dashboard">
-    
-    
+             x:Class="AnxietyNZ.Views.DetailViews.Infoscreen1">
+    <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Info screen 1 content"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="Screen 1" Clicked="SelectedScreen1" HorizontalOptions="Center" />
         </StackLayout>
-    
+    </ContentPage.Content>
 </ContentPage>
