@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnxietyNZ.newContributorPage">
     <ContentPage.Content>
-        <StackLayout Margin="10, 10, 10, 0">
+        <StackLayout Margin="10, 10, 10, 0" x:Name="ContributorInfo">
 
-            <Entry x:Name="image_entry" Placeholder="placeholder for image entry" />
-            <Entry x:Name="name_entry"  Placeholder="Contributor Name" />
-            <Entry x:Name="email_entry" Placeholder="Contributor Email" />
-            <Entry x:Name="ph_number_entry" Placeholder="Contributor Phone Number" />
-            <Entry x:Name="address_entry" Placeholder="Contributor Address" />
+            <!--Entry x:Name="image_entry" Placeholder="placeholder for image entry" /-->
+            <Entry x:Name="name_entry"  Placeholder="Contributor Name" Text="{Binding contributor_name}"/>
+            <Entry x:Name="email_entry" Placeholder="Contributor Email" Text="{Binding contributor_email}"/>
+            <Entry x:Name="ph_number_entry" Placeholder="Contributor Phone Number" Text="{Binding contributor_phone_number}"/>
+            <Entry x:Name="address_entry" Placeholder="Contributor Address" Text="{Binding contributor_address}"/>
 
             <Button Text="Save" Clicked="Save_Contributor" />
 

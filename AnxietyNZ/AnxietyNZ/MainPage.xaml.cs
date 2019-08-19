@@ -32,7 +32,13 @@ namespace AnxietyNZ
 
         private void navigate_newContributor(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new newContributorPage());
+            Navigation.PushAsync(new newContributorPage(null));
+        }
+
+        private async void Edit_Contributor(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            await Navigation.PushAsync(new newContributorPage(btn.BindingContext));
         }
     }
 }

@@ -10,13 +10,31 @@
 
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="contributorListView">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding contributor_name}"
-                          Detail="{Binding contributor_email}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>   
-    </ListView>
+    <StackLayout>
+        <ListView x:Name="contributorListView"
+                  IsPullToRefreshEnabled="True"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding contributor_name}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding contributor_email}" Grid.Row="1" Grid.Column="0"/>
+                                <Button Text="Edit" Clicked="Edit_Contributor" HorizontalOptions="End" HeightRequest="50" Grid.Row="0" Grid.Column="1"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 
 </ContentPage>
